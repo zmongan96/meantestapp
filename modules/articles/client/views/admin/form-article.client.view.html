@@ -1,0 +1,50 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.article._id ? 'Edit Article Listing' : 'New Article Listing'}}</h1>
+  </div>
+  <div class="pull-right">
+    <a ng-show="vm.article._id" class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.articleForm" class="form-horizontal" ng-submit="vm.save(vm.form.articleForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">Title</label>
+          <input name="title" type="text" ng-model="vm.article.title" id="title" class="form-control" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Title is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="name">Oil Name:</label>
+          <input name="content" data-ng-model="vm.article.name" id="name" class="form-control" placeholder="Oil Name" required autofocus>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="batch">Batch Number:</label>
+          <input name="content" data-ng-model="vm.article.batch" id="batch" class="form-control" placeholder="Batch Number" required autofocus>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="testDate">Testing Completed On:</label>
+          <input name="content" data-ng-model="vm.article.testDate" id="testDate" class="form-control" placeholder="Completion Date" required autofocus>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="company">Company:</label>
+          <input name="content" data-ng-model="vm.article.company" id="company" class="form-control" placeholder="Company" required autofocus>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="companyURL">Company Website URL:</label>
+          <input name="content" data-ng-model="vm.article.companyURL" id="companyURL" class="form-control" placeholder="Website URL" required autofocus>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="url">PDF Report URL</label>
+          <input name="content" data-ng-model="vm.article.url" id="url" class="form-control" placeholder="PDF Report URL" required autofocus>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

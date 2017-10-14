@@ -1,0 +1,15 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.article.title"></h1>
+  </div>
+  <div ng-show = "vm.article._id">
+    <p>Oil Name: {{vm.article.name}}</p>
+    <p>Batch Number: {{vm.article.batch}}</p>
+    <p>Testing Completed On: {{vm.article.testDate}}</p>
+    <p>View Full Report: <a href="{{vm.article.url}}" target="_blank">{{vm.article.url}}</a></p><br>
+  </div>
+  <div class="well well-sm">
+    <h5>{{vm.article.company}}</h5>
+    <p>Website: <a href="{{vm.article.companyURL}}" target="_blank">{{vm.article.companyURL}}</a></p>
+  </div>
+</section>
